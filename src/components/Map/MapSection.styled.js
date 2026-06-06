@@ -17,7 +17,8 @@ export const MapImage = styled.img`
 
 export const InfoGrid = styled.div`
   max-width: 1400px;
-  margin: -5px auto 0;
+  margin-top: 35px;
+  margin-left: 35px;
 
   background: #f7f1e7;
   border: 1px solid #d8cab7;
