@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import heroBackground from '../../assets/bg-1.png';
 
 export const HeaderWrapper = styled.header`
@@ -79,7 +79,7 @@ export const Navigation = styled.nav`
   }
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledLink = styled.a`
 
   position: relative;
   text-decoration: none;
