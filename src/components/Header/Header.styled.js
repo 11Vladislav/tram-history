@@ -110,8 +110,9 @@ export const StyledLink = styled(NavLink)`
 
 export const HeroSection = styled.section`
   width: 100%;
-  height: 600px;
+  min-height: 600px;
   padding-top: 100px;
+  padding-bottom: 100px;
   
 
   background: 

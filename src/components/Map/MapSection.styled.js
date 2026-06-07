@@ -20,6 +20,7 @@ export const InfoGrid = styled.div`
   margin-top: 35px;
   margin-left: 35px;
 
+
   background: #f7f1e7;
   border: 1px solid #d8cab7;
 
@@ -28,22 +29,23 @@ export const InfoGrid = styled.div`
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
+   
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    margin-left: 0
+
   }
 `;
 
 export const InfoCard = styled.div`
   display: flex;
   gap: 16px;
-
-  padding: 28px;
-
+  padding: 35px;
   border-right: 1px solid #e1d6c7;
-
   transition: all 0.3s ease;
+  align-items: center;
 
   &:hover {
     background: #fdfaf5;
@@ -56,6 +58,7 @@ export const InfoCard = styled.div`
   @media (max-width: 992px) {
     border-right: none;
     border-bottom: 1px solid #e1d6c7;
+    padding: 25px;
   }
 `;
 
@@ -77,4 +80,5 @@ export const CardText = styled.p`
   color: #5f554d;
   font-size: 0.95rem;
   line-height: 1.6;
+  text-wrap: wrap;
 `;
