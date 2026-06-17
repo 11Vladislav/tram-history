@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
-import heroBackground from '../../assets/bg-1.png';
+
 
 export const HeaderWrapper = styled.header`
   width: 100%;
@@ -13,7 +13,7 @@ export const TopBar = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   padding: 18px 40px;
-
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,6 +44,9 @@ export const TramImage = styled.img`
 export const SiteTitle = styled.div`
   display: flex;
   flex-direction: column;
+    @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const MainTitle = styled.h1`
@@ -65,7 +68,7 @@ export const MainTitle = styled.h1`
 export const Subtitle = styled.p`
   margin-top: 6px;
   color: #746457;
-  font-size: 0.95rem;
+  font-size: 18px;
 `;
 
 export const Navigation = styled.nav`
@@ -73,9 +76,35 @@ export const Navigation = styled.nav`
   gap: 35px;
 
   @media (max-width: 768px) {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    background: #f4eee3;
+
+    border-top: 1px solid #d7c8b4;
+
+    flex-direction: column;
+
+    padding: ${({ $isOpen }) =>
+      $isOpen ? "20px" : "0"};
+
+    gap: ${({ $isOpen }) =>
+      $isOpen ? "20px" : "0"};
+
+    max-height: ${({ $isOpen }) =>
+      $isOpen ? "300px" : "0"};
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    z-index: 1000;
   }
 `;
 
@@ -108,101 +137,25 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
-export const HeroSection = styled.section`
-  width: 100%;
-  min-height: 600px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  
+export const BurgerButton = styled.button`
+  display: none;
 
-  background: 
-    url(${heroBackground});
+  background: transparent;
+  border: none;
 
-  background-size: cover;
-  background-position: cover;
-  background-repeat: no-repeat;
-
-  display: flex;
-  
-`;
-
-export const HeroImage = styled.img`
-  width: 100%;
-  height: auto; 
-  object-fit: cover;
-`;
-
-export const HeroContent = styled.div`
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-`;
-
-export const HeroTitle = styled.h2`
-  font-size: 4rem;
-  color: #3f2d24;
-  margin-bottom: 20px;
-  line-height: 1.1;
-
-  span {
-    color: #9d1f1f;
-  }
+  cursor: pointer;
 
   @media (max-width: 768px) {
-    font-size: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 `;
 
-export const HeroText = styled.p`
-  max-width: 700px;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: #5c5046;
-  margin-bottom: 35px;
-`;
-
-export const ButtonsRow = styled.div`
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-`;
-
-export const PrimaryButton = styled.button`
-  padding: 15px 35px;
-  border: none;
-  border-radius: 8px;
+export const BurgerLine = styled.span`
+  width: 28px;
+  height: 3px;
 
   background: #9d1f1f;
-  color: white;
-
-  font-size: 1rem;
-  font-weight: 600;
-
-  cursor: pointer;
-  transition: 0.3s ease;
-
-  &:hover {
-    background: #7e1818;
-    transform: translateY(-2px);
-  }
-`;
-
-export const SecondaryButton = styled.button`
-  padding: 15px 35px;
-  border-radius: 8px;
-  border: 1px solid #bca894;
-
-  background: rgba(255, 255, 255, 0.7);
-  color: #3f2d24;
-
-  font-size: 1rem;
-  font-weight: 600;
-
-  cursor: pointer;
-  transition: 0.3s ease;
-
-  &:hover {
-    background: white;
-    transform: translateY(-2px);
-  }
+  border-radius: 2px;
 `;

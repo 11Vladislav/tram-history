@@ -5,8 +5,8 @@ import leatherTexture from "../../assets/leather-texture.png";
 export const Section = styled.section`
   position: relative;
 
-  max-width: 1400px;
-  margin: 0 auto 80px;
+  width: 100%;
+  margin: 0 auto;
 
   min-height: 260px;
 
@@ -108,6 +108,7 @@ export const PhotosWrapper = styled.div`
   position: relative;
   width: 320px;
   height: 220px;
+  margin-right: 60px;
 `;
 
 
@@ -123,4 +124,5 @@ export const Photo = styled.img`
   transform: rotate(3deg);
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+
 `;

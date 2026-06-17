@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   HeaderWrapper,
   TopBar,
@@ -8,29 +10,28 @@ import {
   Subtitle,
   Navigation,
   StyledLink,
-  HeroSection,
-  HeroContent,
-  HeroTitle,
-  HeroText,
-  ButtonsRow,
-  PrimaryButton,
-  SecondaryButton,
+   BurgerLine,
+   BurgerButton
 } from './Header.styled';
 
 import tramLogo from '../../assets/tram-logo.png';
 
 
 const Header = () => {
+
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
       <HeaderWrapper>
         <TopBar>
           <LogoBlock>
-            <TramImage
-              src={tramLogo}
-              alt="Киевский трамвай"
-            />
-
+            <StyledLink to="/">
+                <TramImage
+                  src={tramLogo}
+                  alt="Киевский трамвай"
+                />
+            </StyledLink>
             <SiteTitle>
               <MainTitle>
                 Киевские Трамвайные Маршруты: <span>История</span>
@@ -42,42 +43,45 @@ const Header = () => {
             </SiteTitle>
           </LogoBlock>
 
-          <Navigation>
-            <StyledLink to="/routes">Маршруты</StyledLink>
-            <StyledLink to="/rolling-stock">Подвижной состав</StyledLink>
-            <StyledLink to="/archive">Архив фото</StyledLink>
-            <StyledLink to="/stories">Истории</StyledLink>
-          </Navigation>
+           <BurgerButton
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <BurgerLine />
+          <BurgerLine />
+          <BurgerLine />
+        </BurgerButton>
+
+        <Navigation $isOpen={isMenuOpen}>
+          <StyledLink
+            to="/history"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            История
+          </StyledLink>
+
+          <StyledLink
+            to="/routes"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Маршруты
+          </StyledLink>
+
+          <StyledLink
+            to="/rolling-stock"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Подвижной состав
+          </StyledLink>
+
+          <StyledLink
+            to="/archive"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Архив фото
+          </StyledLink>
+        </Navigation>
         </TopBar>
       </HeaderWrapper>
-
-      <HeroSection>
-        <HeroContent>
-          <HeroTitle>
-            Киевские Трамвайные Маршруты: <span>История</span>
-          </HeroTitle>
-
-          <HeroText>
-            История развития трамвайных маршрутов Киева с 1892 года
-            до наших дней. Исследуйте старые линии, архивные фото,
-            схемы маршрутов и подвижной состав разных эпох.
-          </HeroText>
-
-          <ButtonsRow>
-            <PrimaryButton>
-              Обзор истории
-            </PrimaryButton>
-
-            <SecondaryButton>
-              Все маршруты
-            </SecondaryButton>
-
-            <SecondaryButton>
-              Старые фото
-            </SecondaryButton>
-          </ButtonsRow>
-        </HeroContent>
-      </HeroSection>
     </>
   );
 };

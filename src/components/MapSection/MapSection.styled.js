@@ -7,6 +7,7 @@ export const SectionWrapper = styled.section`
 
 export const MapContainer = styled.div`
   width: 100%;
+  padding: 15px 0;
 `;
 
 export const MapImage = styled.img`
@@ -46,6 +47,7 @@ export const InfoCard = styled.div`
   border-right: 1px solid #e1d6c7;
   transition: all 0.3s ease;
   align-items: center;
+  cursor: pointer;
 
   &:hover {
     background: #fdfaf5;

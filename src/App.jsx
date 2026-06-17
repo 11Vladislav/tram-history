@@ -1,13 +1,13 @@
 import Header from "./components/Header/Header";
-import MapSection from "./components/Map/MapSection";
-import CommunitySection from "./components/CommunitySection/CommunitySection";
+import Footer from "./components/Footer/Footer";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
     <>
       <Header />
-      <MapSection />
-      <CommunitySection />
+      <AppRoutes />
+      <Footer />
     </>
   );
 }
