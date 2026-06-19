@@ -479,7 +479,7 @@ padding: 0 40px;
     color: #a71d2c;
 } 
 `,Wo=P.h1`
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Gosznak", sans-serif;
 
   font-size: 3.2rem;
   line-height: 1.1;
@@ -534,6 +534,28 @@ padding: 0 40px;
 
   filter: sepia(45%);
 `,Jo=`/tram-history/assets/history-hero-img-B1Jtm5XS.png`,Yo=()=>(0,R.jsx)(zo,{children:(0,R.jsxs)(Bo,{children:[(0,R.jsxs)(Vo,{children:[(0,R.jsxs)(Uo,{children:[`Главная / `,(0,R.jsx)(`span`,{children:`История`})]}),(0,R.jsxs)(Wo,{children:[`История`,(0,R.jsx)(`br`,{}),`киевского трамвая`]}),(0,R.jsx)(Go,{children:`Более 130 лет киевский трамвай является неотъемлемой частью жизни города. От первых вагонов на конной тяге до современных низкопольных трамваев — это история развития технологий, городской инфраструктуры и людей, которые создавали транспортную систему Киева.`})]}),(0,R.jsx)(Ho,{children:(0,R.jsx)(Ko,{children:(0,R.jsx)(qo,{src:Jo,alt:`Старый киевский трамвай`})})})]})}),Xo=()=>(0,R.jsx)(R.Fragment,{children:(0,R.jsx)(Yo,{})}),Zo=()=>(0,R.jsxs)(Bi,{children:[(0,R.jsx)(Ri,{path:`/`,element:(0,R.jsx)(Ro,{})}),(0,R.jsx)(Ri,{path:`/history`,element:(0,R.jsx)(Xo,{})})]});function Qo(){return(0,R.jsxs)(R.Fragment,{children:[(0,R.jsx)(so,{}),(0,R.jsx)(Zo,{}),(0,R.jsx)(fo,{})]})}var $o=Gn`
+
+ @font-face {
+    font-family: 'Gosznak';
+    src: url(${`/tram-history/assets/Gosznak-Semi%20Bold-Db-cmvdd.otf`}) format('opentype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Gosznak';
+    src: url(${`/tram-history/assets/Gosznak-Semi%20Bold%20Oblique-C4_XsB6g.otf`}) format('opentype');
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'SovMod';
+    src: url(${`/tram-history/assets/SovMod-ysAKPTZ2.ttf`}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -543,7 +565,7 @@ padding: 0 40px;
   body {
     background: #f4eee3;
     color: #3f2d24;
-    font-family: 'Merriweather', sans-serif;
+     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
   }
 
@@ -552,7 +574,7 @@ padding: 0 40px;
   h3,
   h4,
   h5 {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Gosznak', sans-serif;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-color: #3a2d27;
@@ -562,7 +584,7 @@ padding: 0 40px;
   input,
   select,
   textarea {
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   a {
