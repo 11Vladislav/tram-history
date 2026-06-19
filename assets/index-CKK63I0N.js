@@ -25,9 +25,8 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    padding: 18px 20px;
   }
 `,Xa=P.div`
   display: flex;
@@ -143,7 +142,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
 
   background: #9d1f1f;
   border-radius: 2px;
-`,ao=`/tram-history/assets/tram-logo-C0ZNiqmT.png`,oo=o((e=>{var t=Symbol.for(`react.transitional.element`),n=Symbol.for(`react.fragment`);function r(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.Fragment=n,e.jsx=r,e.jsxs=r})),R=o(((e,t)=>{t.exports=oo()}))(),so=()=>{let[e,t]=(0,N.useState)(!1);return(0,R.jsx)(R.Fragment,{children:(0,R.jsx)(Ja,{children:(0,R.jsxs)(Ya,{children:[(0,R.jsxs)(Xa,{children:[(0,R.jsx)(no,{to:`/`,children:(0,R.jsx)(Za,{src:ao,alt:`Киевский трамвай`})}),(0,R.jsxs)(Qa,{children:[(0,R.jsxs)($a,{children:[`Киевские Трамвайные Маршруты: `,(0,R.jsx)(`span`,{children:`История`})]}),(0,R.jsx)(eo,{children:`История, маршруты и подвижной состав киевского трамвая`})]})]}),(0,R.jsxs)(ro,{onClick:()=>t(!e),children:[(0,R.jsx)(io,{}),(0,R.jsx)(io,{}),(0,R.jsx)(io,{})]}),(0,R.jsxs)(to,{$isOpen:e,children:[(0,R.jsx)(no,{to:`/history`,onClick:()=>t(!1),children:`История`}),(0,R.jsx)(no,{to:`/routes`,onClick:()=>t(!1),children:`Маршруты`}),(0,R.jsx)(no,{to:`/rolling-stock`,onClick:()=>t(!1),children:`Подвижной состав`}),(0,R.jsx)(no,{to:`/archive`,onClick:()=>t(!1),children:`Архив фото`})]})]})})})},co=P.footer`
+`,ao=`/tram-history/assets/tram-logo-C0ZNiqmT.png`,oo=o((e=>{var t=Symbol.for(`react.transitional.element`),n=Symbol.for(`react.fragment`);function r(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.Fragment=n,e.jsx=r,e.jsxs=r})),R=o(((e,t)=>{t.exports=oo()}))(),so=()=>{let[e,t]=(0,N.useState)(!1);return(0,R.jsx)(R.Fragment,{children:(0,R.jsx)(Ja,{children:(0,R.jsxs)(Ya,{children:[(0,R.jsxs)(Xa,{children:[(0,R.jsx)(no,{to:`/`,onClick:()=>t(!1),children:(0,R.jsx)(Za,{src:ao,alt:`Киевский трамвай`})}),(0,R.jsxs)(Qa,{children:[(0,R.jsxs)($a,{children:[`Киевские Трамвайные Маршруты: `,(0,R.jsx)(`span`,{children:`История`})]}),(0,R.jsx)(eo,{children:`История, маршруты и подвижной состав киевского трамвая`})]})]}),(0,R.jsxs)(ro,{onClick:()=>t(!e),children:[(0,R.jsx)(io,{}),(0,R.jsx)(io,{}),(0,R.jsx)(io,{})]}),(0,R.jsxs)(to,{$isOpen:e,children:[(0,R.jsx)(no,{to:`/history`,onClick:()=>t(!1),children:`История`}),(0,R.jsx)(no,{to:`/routes`,onClick:()=>t(!1),children:`Маршруты`}),(0,R.jsx)(no,{to:`/rolling-stock`,onClick:()=>t(!1),children:`Подвижной состав`}),(0,R.jsx)(no,{to:`/archive`,onClick:()=>t(!1),children:`Архив фото`})]})]})})})},co=P.footer`
   background-color: #38291c;
   width: 100%;
   padding: 20px 30px;
@@ -175,7 +174,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
     &:hover {
         color: #9d1f1f;
     }
-`,fo=()=>(0,R.jsxs)(co,{children:[(0,R.jsx)(lo,{children:`© 2024 Киевские трамваи. Все права защищены.`}),(0,R.jsxs)(uo,{children:[(0,R.jsx)(z,{to:`/about`,children:`О проекте`}),(0,R.jsx)(z,{to:`/contact`,children:`Контакты`}),(0,R.jsx)(z,{to:`/privacy`,children:`Политика конфиденциальности`})]})]}),po=P.section`
+`,fo=()=>(0,R.jsxs)(co,{children:[(0,R.jsx)(lo,{children:`© 2026 Киевские трамваи. Все права защищены.`}),(0,R.jsxs)(uo,{children:[(0,R.jsx)(z,{to:`/about`,children:`О проекте`}),(0,R.jsx)(z,{to:`/contact`,children:`Контакты`}),(0,R.jsx)(z,{to:`/privacy`,children:`Политика конфиденциальности`})]})]}),po=P.section`
   width: 100%;
   min-height: 600px;
   padding-top: 100px;
@@ -229,7 +228,7 @@ padding: 0 40px;
 
   background: #9d1f1f;
   color: white;
-  flex-grow: 1;
+
   font-size: 1rem;
   font-weight: 600;
 
@@ -240,11 +239,14 @@ padding: 0 40px;
     background: #7e1818;
     transform: translateY(-2px);
   }
+        @media (max-width: 768px) {
+    flex-grow: 1;
+  }
 `,_o=P.button`
   padding: 15px 35px;
   border-radius: 8px;
   border: 1px solid #bca894;
-  flex-grow: 1;
+
   background: rgba(255, 255, 255, 0.7);
   color: #3f2d24;
 
@@ -257,6 +259,9 @@ padding: 0 40px;
   &:hover {
     background: white;
     transform: translateY(-2px);
+  }
+        @media (max-width: 768px) {
+    flex-grow: 1;
   }
 `,vo=()=>(0,R.jsx)(po,{children:(0,R.jsxs)(B,{children:[(0,R.jsxs)(V,{children:[`Киевские Трамвайные Маршруты: `,(0,R.jsx)(`span`,{children:`История`})]}),(0,R.jsx)(mo,{children:`История развития трамвайных маршрутов Киева с 1892 года до наших дней. Исследуйте старые линии, архивные фото, схемы маршрутов и подвижной состав разных эпох.`}),(0,R.jsxs)(ho,{children:[(0,R.jsx)(go,{children:`Обзор истории`}),(0,R.jsx)(_o,{children:`Все маршруты`}),(0,R.jsx)(_o,{children:`Старые фото`})]})]})}),yo=P.section`
   background: #f4eee3;
@@ -398,6 +403,9 @@ padding: 0 40px;
     background: #921818;
     transform: translateY(-2px);
   }
+        @media (max-width: 768px) {
+    flex-grow: 1;
+  }
 `,No=P.button`
   padding: 16px 34px;
 
@@ -417,6 +425,9 @@ padding: 0 40px;
   &:hover {
     transform: translateY(-2px);
   }
+    @media (max-width: 768px) {
+    flex-grow: 1;
+  }
 `,Po=P.div`
   position: relative;
   width: 320px;
@@ -428,8 +439,6 @@ padding: 0 40px;
   width: 280px;
   right: 0;
   top: 0;
-
-  border: 10px solid #f5f0e8;
 
   transform: rotate(3deg);
 
@@ -492,15 +501,11 @@ padding: 0 40px;
 `,Ko=P.div`
   position: relative;
 
-  background: #f8f2e7;
 
   padding: 12px;
 
   border-radius: 3px;
 
-  box-shadow:
-    0 15px 35px rgba(0,0,0,0.18),
-    0 5px 10px rgba(0,0,0,0.08);
 
   transform: rotate(-2deg);
 
@@ -514,8 +519,6 @@ padding: 0 40px;
 
     top: -12px;
     left: 12px;
-
-    background: #efe4d0;
 
     z-index: -1;
 
