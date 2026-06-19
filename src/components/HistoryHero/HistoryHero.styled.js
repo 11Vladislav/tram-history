@@ -46,7 +46,7 @@ export const Breadcrumbs = styled.div`
 `;
 
 export const HeroTitle = styled.h1`
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Gosznak", sans-serif;
 
   font-size: 3.2rem;
   line-height: 1.1;
