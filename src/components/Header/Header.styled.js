@@ -19,9 +19,8 @@ export const TopBar = styled.div`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    padding: 18px 20px;
   }
 `;
 

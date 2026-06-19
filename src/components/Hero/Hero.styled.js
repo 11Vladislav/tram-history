@@ -67,7 +67,7 @@ export const PrimaryButton = styled.button`
 
   background: #9d1f1f;
   color: white;
-  flex-grow: 1;
+
   font-size: 1rem;
   font-weight: 600;
 
@@ -78,13 +78,16 @@ export const PrimaryButton = styled.button`
     background: #7e1818;
     transform: translateY(-2px);
   }
+        @media (max-width: 768px) {
+    flex-grow: 1;
+  }
 `;
 
 export const SecondaryButton = styled.button`
   padding: 15px 35px;
   border-radius: 8px;
   border: 1px solid #bca894;
-  flex-grow: 1;
+
   background: rgba(255, 255, 255, 0.7);
   color: #3f2d24;
 
@@ -97,5 +100,8 @@ export const SecondaryButton = styled.button`
   &:hover {
     background: white;
     transform: translateY(-2px);
+  }
+        @media (max-width: 768px) {
+    flex-grow: 1;
   }
 `;

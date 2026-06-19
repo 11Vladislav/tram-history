@@ -26,7 +26,8 @@ const Header = () => {
       <HeaderWrapper>
         <TopBar>
           <LogoBlock>
-            <StyledLink to="/">
+            <StyledLink to="/"
+            onClick={() => setIsMenuOpen(false)}>
                 <TramImage
                   src={tramLogo}
                   alt="Киевский трамвай"

@@ -81,6 +81,9 @@ export const RedButton = styled.button`
     background: #921818;
     transform: translateY(-2px);
   }
+        @media (max-width: 768px) {
+    flex-grow: 1;
+  }
 `;
 
 export const WhiteButton = styled.button`
@@ -102,6 +105,9 @@ export const WhiteButton = styled.button`
   &:hover {
     transform: translateY(-2px);
   }
+    @media (max-width: 768px) {
+    flex-grow: 1;
+  }
 `;
 
 export const PhotosWrapper = styled.div`
@@ -118,8 +124,6 @@ export const Photo = styled.img`
   width: 280px;
   right: 0;
   top: 0;
-
-  border: 10px solid #f5f0e8;
 
   transform: rotate(3deg);
 

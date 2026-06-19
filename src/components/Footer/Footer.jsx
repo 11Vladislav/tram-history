@@ -8,7 +8,7 @@ import {
 const Footer = () => {
     return (
         <FooterContainer>       
-            <FooterTitle>© 2024 Киевские трамваи. Все права защищены.</FooterTitle>
+            <FooterTitle>© 2026 Киевские трамваи. Все права защищены.</FooterTitle>
             <FooterNav>
                 <FooterLink to="/about">О проекте</FooterLink> 
                 <FooterLink to="/contact">Контакты</FooterLink>

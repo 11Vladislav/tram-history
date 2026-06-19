@@ -72,15 +72,11 @@ export const HeroText = styled.p`
 export const PhotoFrame = styled.div`
   position: relative;
 
-  background: #f8f2e7;
 
   padding: 12px;
 
   border-radius: 3px;
 
-  box-shadow:
-    0 15px 35px rgba(0,0,0,0.18),
-    0 5px 10px rgba(0,0,0,0.08);
 
   transform: rotate(-2deg);
 
@@ -94,8 +90,6 @@ export const PhotoFrame = styled.div`
 
     top: -12px;
     left: 12px;
-
-    background: #efe4d0;
 
     z-index: -1;
 
