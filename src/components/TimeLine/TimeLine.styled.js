@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   background: #f5efe5;
-  padding: 90px 40px;
+  padding: 40px 40px;
 `;
 
 
@@ -14,7 +14,7 @@ export const Title = styled.h2`
 
   color: #3f2d24;
 
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 `;
 
 export const TimelineLine = styled.div`
@@ -60,7 +60,7 @@ export const Dot = styled.div`
   width: 18px;
   height: 18px;
 
-  margin: -9px auto 25px;
+  margin: 0px auto 25px;
 
   background: #9d1f1f;
 
