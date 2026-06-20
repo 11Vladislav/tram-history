@@ -535,7 +535,7 @@ padding: 0 40px;
   filter: sepia(45%);
 `,Yo=`/tram-history/assets/history-hero-img-B1Jtm5XS.png`,Xo=()=>(0,L.jsx)(Bo,{children:(0,L.jsxs)(Vo,{children:[(0,L.jsxs)(Ho,{children:[(0,L.jsxs)(Wo,{children:[`Главная / `,(0,L.jsx)(`span`,{children:`История`})]}),(0,L.jsxs)(Go,{children:[`История`,(0,L.jsx)(`br`,{}),`киевского трамвая`]}),(0,L.jsx)(Ko,{children:`Более 130 лет киевский трамвай является неотъемлемой частью жизни города. От первых вагонов на конной тяге до современных низкопольных трамваев — это история развития технологий, городской инфраструктуры и людей, которые создавали транспортную систему Киева.`})]}),(0,L.jsx)(Uo,{children:(0,L.jsx)(qo,{children:(0,L.jsx)(Jo,{src:Yo,alt:`Старый киевский трамвай`})})})]})}),Zo=N.section`
   background: #f5efe5;
-  padding: 90px 40px;
+  padding: 40px 40px;
 `,Qo=N.h2`
   text-align: center;
 
@@ -544,7 +544,7 @@ padding: 0 40px;
 
   color: #3f2d24;
 
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 `,$o=N.div`
   max-width: 1400px;
   height: 2px;
@@ -582,7 +582,7 @@ padding: 0 40px;
   width: 18px;
   height: 18px;
 
-  margin: -9px auto 25px;
+  margin: 0px auto 25px;
 
   background: #9d1f1f;
 
@@ -626,7 +626,36 @@ padding: 0 40px;
   margin: 20px auto 0;
 
   filter: sepia(35%);
-`,ss=[{year:`1891`,title:`Первые трамваи`,description:`30 июля (11 августа) 1891 года года в Киеве открылось первое трамвайное движение. Это была линия конного трамвая.`,image:`/tram-history/assets/horse-tram-Dbn11T1V.png`},{year:`1896`,title:`Электрификация`,description:`Все линии трамвая стали электрическими.`,image:`/tram-history/assets/electric-tram-h7eItazC.png`},{year:`1920–1930`,title:`Расширение сети`,description:`Активное развитие маршрутов и строительство новых линий. Строительство депо.`,image:`/tram-history/assets/expansion-tram-CFE98Yb8.png`},{year:`1941–1945`,title:`Военные годы`,description:`Трамвай продолжал  работать в суровые военные годы, обеспечивать жизнь города.`,image:`/tram-history/assets/war-tram-U13lXzbA.png`},{year:`1950–наши дни`,title:`Современный этап`,description:`Обновление подвижного состава и инфраструктуры. Внедрение современных технологий`,image:`/tram-history/assets/modern-tram-DpjVZChc.png`}],cs=()=>(0,L.jsxs)(Zo,{children:[(0,L.jsx)(Qo,{children:`Ключевые этапы`}),(0,L.jsx)($o,{}),(0,L.jsx)(es,{children:ss.map(e=>(0,L.jsxs)(ts,{children:[(0,L.jsx)(ns,{}),(0,L.jsx)(rs,{children:e.year}),(0,L.jsx)(is,{children:e.title}),(0,L.jsx)(as,{children:e.description}),(0,L.jsx)(os,{src:e.image,alt:e.title})]},e.year))})]}),ls=()=>(0,L.jsxs)(L.Fragment,{children:[(0,L.jsx)(Xo,{}),(0,L.jsx)(cs,{})]}),us=()=>(0,L.jsxs)(Vi,{children:[(0,L.jsx)(zi,{path:`/`,element:(0,L.jsx)(zo,{})}),(0,L.jsx)(zi,{path:`/history`,element:(0,L.jsx)(ls,{})})]});function ds(){return(0,L.jsxs)(L.Fragment,{children:[(0,L.jsx)(co,{}),(0,L.jsx)(us,{}),(0,L.jsx)(po,{})]})}var fs=Kn`
+`,ss=[{year:`1891`,title:`Первые трамваи`,description:`30 июля (11 августа) 1891 года года в Киеве открылось первое трамвайное движение. Это была линия конного трамвая.`,image:`/tram-history/assets/horse-tram-Dbn11T1V.png`},{year:`1896`,title:`Электрификация`,description:`Все линии трамвая стали электрическими.`,image:`/tram-history/assets/electric-tram-h7eItazC.png`},{year:`1920–1930`,title:`Расширение сети`,description:`Активное развитие маршрутов и строительство новых линий. Строительство депо.`,image:`/tram-history/assets/expansion-tram-CFE98Yb8.png`},{year:`1941–1945`,title:`Военные годы`,description:`Трамвай продолжал  работать в суровые военные годы, обеспечивать жизнь города.`,image:`/tram-history/assets/war-tram-U13lXzbA.png`},{year:`1950–наши дни`,title:`Современный этап`,description:`Обновление подвижного состава и инфраструктуры. Внедрение современных технологий`,image:`/tram-history/assets/modern-tram-DpjVZChc.png`}],cs=()=>(0,L.jsxs)(Zo,{children:[(0,L.jsx)(Qo,{children:`Ключевые этапы`}),(0,L.jsx)($o,{}),(0,L.jsx)(es,{children:ss.map(e=>(0,L.jsxs)(ts,{children:[(0,L.jsx)(ns,{}),(0,L.jsx)(rs,{children:e.year}),(0,L.jsx)(is,{children:e.title}),(0,L.jsx)(as,{children:e.description}),(0,L.jsx)(os,{src:e.image,alt:e.title})]},e.year))})]}),ls=N.section`
+    background: #f5efe5;
+  padding: 10px 40px 50px 70px;
+  
+`,us=N.h2`
+  text-align: center;
+
+  font-family: "Gosznak", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3f2d24;
+
+  margin-bottom: 70px;
+`,ds=N.ul`
+    list-style-type: none;
+    text-align: center;
+`,fs=N.li`
+    margin-top: 20px;
+    font-size 20px;
+    
+`,ps=N(Ma)`
+     text-decoration: none;
+     font-weight: 400;
+     font-size: 25px;
+     color: #3f2d24;
+     &:hover {
+    color: #9d1f1f;
+  }
+
+`,ms=()=>(0,L.jsx)(L.Fragment,{children:(0,L.jsxs)(ls,{children:[(0,L.jsx)(us,{children:`Виды трамвая в Киеве`}),(0,L.jsxs)(ds,{children:[(0,L.jsx)(fs,{children:(0,L.jsx)(ps,{to:`/HorseTram`,children:`Конный трамвай`})}),(0,L.jsx)(fs,{children:(0,L.jsx)(ps,{to:`/SteamTram`,children:`Паровой трамвай`})}),(0,L.jsx)(fs,{children:(0,L.jsx)(ps,{to:`/ElectroTram`,children:`Электрический трамвай`})}),(0,L.jsx)(fs,{children:(0,L.jsx)(ps,{to:`/GasTram`,children:`Бензотрамвай`})}),(0,L.jsx)(fs,{children:(0,L.jsx)(ps,{to:`/SpeedTram`,children:`Скоростной трамвай`})})]})]})}),hs=()=>(0,L.jsxs)(L.Fragment,{children:[(0,L.jsx)(Xo,{}),(0,L.jsx)(cs,{}),(0,L.jsx)(ms,{})]}),gs=()=>(0,L.jsxs)(Vi,{children:[(0,L.jsx)(zi,{path:`/`,element:(0,L.jsx)(zo,{})}),(0,L.jsx)(zi,{path:`/history`,element:(0,L.jsx)(hs,{})})]});function _s(){return(0,L.jsxs)(L.Fragment,{children:[(0,L.jsx)(co,{}),(0,L.jsx)(gs,{}),(0,L.jsx)(po,{})]})}var vs=Kn`
 
  @font-face {
     font-family: 'Gosznak';
@@ -683,4 +712,4 @@ padding: 0 40px;
   a {
     text-decoration: none;
   }
-`;Ge.createRoot(document.getElementById(`root`)).render((0,L.jsx)(M.StrictMode,{children:(0,L.jsxs)(Oa,{children:[(0,L.jsx)(fs,{}),(0,L.jsx)(ds,{})]})}));
+`;Ge.createRoot(document.getElementById(`root`)).render((0,L.jsx)(M.StrictMode,{children:(0,L.jsxs)(Oa,{children:[(0,L.jsx)(vs,{}),(0,L.jsx)(_s,{})]})}));
