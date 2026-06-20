@@ -4,7 +4,6 @@ import GosznakSemiBold from "./fonts/Gosznak-Semi Bold.otf";
 import GosznakSemiBoldOblique from "./fonts/Gosznak-Semi Bold Oblique.otf";
 import SovMod from "./fonts/SovMod.ttf";
 
-import "simplelightbox/dist/simple-lightbox.min.css";
 
 const GlobalStyles = createGlobalStyle`
 

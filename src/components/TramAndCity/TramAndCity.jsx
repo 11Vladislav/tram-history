@@ -10,29 +10,15 @@ import {
   FeatureItem,
   IconCircle,
   FeatureText,
-  GalleryHeader,
-  GalleryTitle,
-  ViewAll,
-  MainPhoto,
-  ThumbnailRow,
-  Thumbnail,
 } from "./TramAndCity.styled";
 
+import HistoryGallery from "../HistoryGallery/HistoryGallery";
 
 import {
   FaUsers,
   FaCog,
   FaHeart,
 } from "react-icons/fa";
-
-
-import mainPhoto from "../../assets/aleksandr-line.jpg";
-import thumb1 from "../../assets/konka.webp";
-import thumb2 from "../../assets/pusha-tram.jpg";
-import thumb3 from "../../assets/mtv-82.webp";
-import thumb4 from "../../assets/ktv-55.webp";
-import thumb5 from "../../assets/tatra-t3-tram.jpg";
-import thumb6 from "../../assets/electron-tram.jpg";
 
 
 const TramAndCity = () => {
@@ -82,37 +68,13 @@ const TramAndCity = () => {
 
               <FeatureText>
                 Оставил тёплые воспоминания
-                в сердцах поколений
+                в сердцах 
               </FeatureText>
             </FeatureItem>
           </FeaturesList>
          </LeftColumn>
          <RightColumn>
-
-          <GalleryHeader>
-            <GalleryTitle>
-              Исторические фотографии
-            </GalleryTitle>
-
-            <ViewAll>
-              Смотреть все
-            </ViewAll>
-          </GalleryHeader>
-
-          <MainPhoto
-            src={mainPhoto}
-            alt="Линия на Подоле"
-          />
-
-          <ThumbnailRow>
-            <Thumbnail src={thumb1} />
-            <Thumbnail src={thumb2} />
-            <Thumbnail src={thumb3} />
-            <Thumbnail src={thumb4} />
-            <Thumbnail src={thumb5} />
-            <Thumbnail src={thumb6} />
-          </ThumbnailRow>
-
+          <HistoryGallery />
         </RightColumn>
         </Container>
     </Section>

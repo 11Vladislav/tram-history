@@ -12,6 +12,7 @@ export const FooterContainer = styled.footer`
       flex-direction: column;
       justify-content: flex-start;
       gap: 10px;
+     
   }
   `;
 
@@ -28,6 +29,7 @@ export const FooterNav = styled.nav`
       flex-direction: column;
       justify-content: flex-start;
       gap: 10px;
+     margin-left: -40px;
   }
 `;
 
