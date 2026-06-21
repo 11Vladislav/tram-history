@@ -5,7 +5,7 @@ import "yet-another-react-lightbox/styles.css";
 
 
 import {
-  GalleryWrapper,
+  
   GalleryHeader,
   GalleryTitle,
   ViewAllButton,
@@ -60,7 +60,7 @@ const Gallery = () => {
 
   return (
     <>
-      <GalleryWrapper>
+ 
         <GalleryHeader>
           <GalleryTitle>
             Исторические фотографии
@@ -92,7 +92,7 @@ const Gallery = () => {
             />
           ))}
         </ThumbnailRow>
-      </GalleryWrapper>
+      
 
       <Lightbox
         open={open}

@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-export const GalleryWrapper = styled.div`
-  background: #f8f1e6;
-
-  border: 1px solid #ddcfbc;
-  border-radius: 12px;
-
-  padding: 24px;
-
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-`;
-
 export const GalleryHeader = styled.div`
   display: flex;
   justify-content: space-between;
