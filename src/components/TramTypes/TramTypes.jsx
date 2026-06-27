@@ -4,7 +4,9 @@ import {
     List,
     ListItem,
     StyledLink,
+    ItemIng
 } from './TramTypes.styled';
+import konka1 from '../../assets/konka1.jpg'
 
 const TramTypes = () => {
     return(
@@ -13,20 +15,21 @@ const TramTypes = () => {
                 <Title>Виды трамвая в Киеве</Title>
                     <List>
                         <ListItem>
-                            <StyledLink to="/HorseTram">Конный трамвай</StyledLink> 
+                            <StyledLink to="/history/horse">Конный трамвай</StyledLink>
+                            <ItemIng src={konka1} alt='Конный трамвай'></ItemIng>
                         </ListItem>
-                            <ListItem>
-                            <StyledLink to="/SteamTram">Паровой трамвай</StyledLink> 
+                            {/* <ListItem>
+                            <StyledLink to="/history/steam">Паровой трамвай</StyledLink> 
                         </ListItem>
                         <ListItem>
-                            <StyledLink to="/ElectroTram">Электрический трамвай</StyledLink> 
+                            <StyledLink to="/history/electro">Электрический трамвай</StyledLink> 
                         </ListItem>
                             <ListItem>
-                            <StyledLink to="/GasTram">Бензотрамвай</StyledLink> 
+                            <StyledLink to="/history/gasoline">Бензотрамвай</StyledLink> 
                         </ListItem> 
                             <ListItem>
-                            <StyledLink to="/SpeedTram">Скоростной трамвай</StyledLink> 
-                        </ListItem>                                               
+                            <StyledLink to="/history/speed">Скоростной трамвай</StyledLink> 
+                        </ListItem>                                                */}
                     </List>
             </Section>
         

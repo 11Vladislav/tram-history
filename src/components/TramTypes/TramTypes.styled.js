@@ -22,12 +22,17 @@ export const Title = styled.h2`
 export const List = styled.ul`
     list-style-type: none;
     text-align: center;
+    display: flex;
 `;
 
 export const ListItem = styled.li`
+
     margin-top: 20px;
     font-size 20px;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -39,4 +44,11 @@ export const StyledLink = styled(NavLink)`
     color: #9d1f1f;
   }
 
+`;
+
+export const ItemIng = styled.img`
+  width: 100%;
+ height: auto; 
+  object-fit: cover;
+margin-top: 20px;
 `;

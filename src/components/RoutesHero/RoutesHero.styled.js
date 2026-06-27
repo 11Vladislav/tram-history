@@ -14,7 +14,9 @@ export const RoutesContainer = styled.div`
   gap: 80px;
   align-items: center;
   justify-content: space-between;  
-
+  @media (max-width: 768px) {
+   flex-direction: column;
+  }
 `;
 
 
