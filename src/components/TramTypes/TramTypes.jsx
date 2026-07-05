@@ -15,8 +15,9 @@ const TramTypes = () => {
                 <Title>Виды трамвая в Киеве</Title>
                     <List>
                         <ListItem>
-                            <StyledLink to="/history/horse">Конный трамвай</StyledLink>
+                            <StyledLink to="/history/horse">Конный трамвай
                             <ItemIng src={konka1} alt='Конный трамвай'></ItemIng>
+                            </StyledLink>
                         </ListItem>
                             {/* <ListItem>
                             <StyledLink to="/history/steam">Паровой трамвай</StyledLink> 

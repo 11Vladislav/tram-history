@@ -27,6 +27,9 @@ export const MainImg = styled.img`
   border-radius: 6px;
   margin: 0 auto;
   display: block;
+   @media (max-width: 768px) {
+    width: 100%;
+   }
   `;
 
   export const Text = styled.p`
@@ -42,6 +45,7 @@ export const MainImg = styled.img`
 export const ItemWrap = styled.div`
   display: flex;
   width: 100%;
+
     @media (max-width: 768px) {
      flex-direction: column;
      
@@ -57,18 +61,22 @@ flex-wrap: no-wrap;
 max-width: 700px;
   @media (max-width: 768px) {
      display: block;
+     width: 100%;
     }
 `
 
 export const TextImg = styled.img`
   width: 45%;
-  height: 250px;
+  height: 350px;
   object-fit: cover;
   border-radius: 6px;
   margin-top: 25px;
+  margin-right: 25px;
   display: block;
     @media (max-width: 768px) {
      margin: 0 auto;
+     width: 70%;
+      
      padding: 15px 0;
     }
   `;
@@ -78,4 +86,17 @@ export const TextImg = styled.img`
     font-size: 18px;
     font-weight: 500;
     margin-left: 50px;
+       @media (max-width: 768px) {
+        width: 100%;
+        text-align:  justify;
+        margin-left: 0;
+   }
   `;
+
+export const Videocontainer = styled.div`
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+    height: 0;
+  `;
+
