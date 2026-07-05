@@ -1,5 +1,6 @@
 
 import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
 
 export const Section = styled.section`
     background: #f5efe5;
@@ -18,9 +19,18 @@ export const Title = styled.h2`
   margin-bottom: 70px;
 `;
 
+export const Breadcrumbs = styled.div`
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 35px;
+   span {
+    color: #a71d2c;
+} 
+`;
+
 export const MainImg = styled.img`
-  width: 50%;
-  height: 250px;
+  width: 100%;
+  height: 350px;
 
   object-fit: cover;
 
@@ -30,6 +40,22 @@ export const MainImg = styled.img`
    @media (max-width: 768px) {
     width: 100%;
    }
+  `;
+
+  export const MainImg1 = styled.img`
+    width: 100%;
+  height: 650px;
+
+  object-fit: none;
+
+  border-radius: 6px;
+  margin: 0 auto;
+  display: block;
+   @media (max-width: 768px) {
+    width: 100%;
+   }
+  
+  
   `;
 
   export const Text = styled.p`
@@ -93,10 +119,31 @@ export const TextImg = styled.img`
    }
   `;
 
-export const Videocontainer = styled.div`
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
-    height: 0;
-  `;
+export const StyledLink = styled(NavLink)`
 
+  position: relative;
+  text-decoration: none;
+  color: #3f2d24;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #9d1f1f;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #9d1f1f;
+    transition: 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+`;

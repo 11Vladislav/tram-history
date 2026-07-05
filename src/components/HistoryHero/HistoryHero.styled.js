@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import historyHeroBackground from '../../assets/oldpaper-texture.png';
+import { NavLink } from 'react-router-dom';
 
 export const HeroSection = styled.section`
   position: relative;
@@ -106,4 +107,33 @@ export const HeroImage = styled.img`
   display: block;
 
   filter: sepia(45%);
+`;
+
+export const StyledLink = styled(NavLink)`
+
+  position: relative;
+  text-decoration: none;
+  color: #3f2d24;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #9d1f1f;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #9d1f1f;
+    transition: 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;

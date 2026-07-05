@@ -6,6 +6,7 @@ import {RoutesSection,
         RightSide,
         Breadcrumbs,
         RoutesImage,
+          StyledLink,
 
 } from './RoutesHero.styled';
 import RoutesHeroImg from '../../assets/routes-hero-tram.png';
@@ -17,7 +18,7 @@ const RoutesHero = () => {
             <RoutesContainer>
                  <LeftSide>
                     <Breadcrumbs>
-                        Главная / <span>Маршруты</span>
+                       <StyledLink to="/">Главная</StyledLink> / <span>Маршруты</span>
                     </Breadcrumbs>
                     <RoutesTitle>
                         Маршруты Киева

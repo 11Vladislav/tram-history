@@ -8,6 +8,7 @@ import {
   HeroText,
   PhotoFrame,
   HeroImage,
+  StyledLink,
 } from "./HistoryHero.styled";
 
 import HistoryHeroImage from "../../assets/history-hero-img.png";
@@ -18,7 +19,7 @@ const HistoryHero = () => {
       <HeroContainer>
         <LeftSide>
           <Breadcrumbs>
-            Главная / <span>История</span>
+            <StyledLink to="/">Главная</StyledLink> / <span>История</span>
           </Breadcrumbs>
 
           <HeroTitle>

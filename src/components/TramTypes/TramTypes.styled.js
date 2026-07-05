@@ -23,19 +23,22 @@ export const List = styled.ul`
     list-style-type: none;
     text-align: center;
     display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    @ media (max-width: 768px) {
+      justify-content: center;
+  }
 `;
 
 export const ListItem = styled.li`
-
     margin-top: 20px;
     font-size 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
 `;
 
 export const StyledLink = styled(NavLink)`
+  display: flex;
+  flex-direction: column;
      text-decoration: none;
      font-weight: 400;
      font-size: 25px;
@@ -47,7 +50,7 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const ItemIng = styled.img`
-  width: 100%;
+  width: 350px;
  height: auto; 
   object-fit: cover;
 margin-top: 20px;

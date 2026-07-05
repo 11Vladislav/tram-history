@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
 
 export const RoutesSection = styled.section`
      background-color: #fff8d1;
@@ -71,4 +72,33 @@ export const RoutesImage = styled.img`
   border-radius: 5%;
   box-shadow: 10px 5px 5px #fff8d1;
   filter: sepia(45%);
+`;
+
+export const StyledLink = styled(NavLink)`
+
+  position: relative;
+  text-decoration: none;
+  color: #3f2d24;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: #9d1f1f;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #9d1f1f;
+    transition: 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;

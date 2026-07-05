@@ -6,9 +6,11 @@ import {Section,
         TextSpan,
         ItemWrap,
         TextWrap,
+        Breadcrumbs,
+        StyledLink
 } 
-from './HorseTramPage.styled';
-import photo1 from "../../assets/konka.webp";
+from './TramPage.styled';
+import photo1 from "../../assets/konka-wide.png";
 import struve from "../../assets/stuve.jpg";
 import margolin from "../../assets/margolin.jpg";
 import photo2 from "../../assets/konka2.jpeg";
@@ -18,6 +20,9 @@ const HorseTramPage = () => {
     return(
     <Section>
         <Title>Киевская городская конно-железная дорога</Title>
+         <Breadcrumbs>
+                <StyledLink to="/">Главная</StyledLink> / <StyledLink to="/history">История</StyledLink><span> / Конный трамвай</span>
+        </Breadcrumbs>
         <MainImg
         src={photo1}
          alt="Конный трамвай"
