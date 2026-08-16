@@ -3,14 +3,16 @@ import {Section,
 } 
 from './TypeTramPage.styled';
 
-import { Outlet } from "react-router-dom";
+
 
 
 const HighSpeedTramPage = () => {
+    return(
     <Section>
         <Title>Киевский электрический трамвай</Title>
-        <Outlet/>
+  
     </Section>
+    )
 }
 
 export default HighSpeedTramPage;

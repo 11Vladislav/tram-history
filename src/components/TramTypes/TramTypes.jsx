@@ -8,6 +8,7 @@ import {
 } from './TramTypes.styled';
 import konka1 from '../../assets/konka1.jpg'
 import steamTram from '../../assets/steam-tram-2.jpg'
+import petrolTram from '../../assets/petrol-tram.jpg'
 
 const TramTypes = () => {
     return(
@@ -25,11 +26,13 @@ const TramTypes = () => {
                             <ItemIng src={steamTram} alt='Паровой трамвай'></ItemIng>
                             </StyledLink>
                         </ListItem>
-                          {/*<ListItem>
-                            <StyledLink to="/history/electro">Электрический трамвай</StyledLink> 
+                          <ListItem>
+                            <StyledLink to="/history/gasoline">Бензотрамвай
+                            <ItemIng src={petrolTram} alt='Бензотрамвай'></ItemIng>
+                            </StyledLink> 
                         </ListItem>
-                            <ListItem>
-                            <StyledLink to="/history/gasoline">Бензотрамвай</StyledLink> 
+                           {/* <ListItem>
+                            <StyledLink to="/history/electro">Электрический трамвай</StyledLink> 
                         </ListItem> 
                             <ListItem>
                             <StyledLink to="/history/speed">Скоростной трамвай</StyledLink> 

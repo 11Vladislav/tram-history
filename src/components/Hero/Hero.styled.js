@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import heroBackground from '../../assets/bg-1.png';
+import {NavLink} from "react-router-dom";
+
 
 export const HeroSection = styled.section`
   width: 100%;
@@ -104,4 +106,10 @@ export const SecondaryButton = styled.button`
         @media (max-width: 768px) {
     flex-grow: 1;
   }
+`;
+
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
 `;

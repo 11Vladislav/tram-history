@@ -1,16 +1,21 @@
 import {Section,
-        Title
+        Title,
+        Breadcrumbs,
+        StyledLink,
 } 
-from './TypeTramPage.styled';
+from './TramPage.styled';
 
-import { Outlet } from "react-router-dom";
 
 
 const PetrolTramPage = () => {
+       return(
     <Section>
-        <Title>Киевская городская конно-железная дорога</Title>
-        <Outlet/>
+        <Title>Киевский бензотрамвай</Title>
+      <Breadcrumbs>
+            <StyledLink to="/">Главная</StyledLink> / <StyledLink to="/history">История</StyledLink><span> /  Бензотрамвай</span>
+        </Breadcrumbs>
     </Section>
+    )
 }
 
 export default PetrolTramPage ;

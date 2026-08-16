@@ -14,17 +14,20 @@ import routesImage from "../../assets/routes.png";
 import trainCarsImage from "../../assets/train-cars.png";
 import memoryBookImage from "../../assets/memory-book.png";
 
+import { NavLink } from "react-router-dom";
 
 const cards = [
   {
     title: "История трамвая",
     text: "Ключевые события и этапы развития киевского трамвая.",
     image: tramLogo,
+    path: "/history",
   },
   {
     title: "Маршруты Киева",
     text: "Карты и описание всех трамвайных маршрутов.",
     image: routesImage,
+    path: "/routes",
   },
   {
     title: "Подвижной состав",
@@ -50,7 +53,10 @@ const MapSection = () => {
 
       <InfoGrid>
         {cards.map((card) => (
-          <InfoCard key={card.title}>
+          <InfoCard key={card.title}
+            as={NavLink}
+            to={card.path}
+          >
             <CardImage src={card.image} alt={card.title} />
 
             <div>

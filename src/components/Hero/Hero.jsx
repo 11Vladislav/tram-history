@@ -5,8 +5,11 @@ import {
     HeroText,
     ButtonsRow,
     PrimaryButton,
-    SecondaryButton
+    SecondaryButton,
+    StyledNavLink,
 } from './Hero.styled';
+
+
 
 const Hero = () => {
     return (
@@ -23,14 +26,10 @@ const Hero = () => {
                  </HeroText>
        
                  <ButtonsRow>
-                   <PrimaryButton>
-                     Обзор истории
-                   </PrimaryButton>
-       
-                   <SecondaryButton>
-                     Все маршруты
-                   </SecondaryButton>
-       
+                   
+                     <StyledNavLink to="/history"><PrimaryButton>Обзор истории</PrimaryButton></StyledNavLink>
+                     <StyledNavLink to="/routes"><SecondaryButton>Все маршруты</SecondaryButton></StyledNavLink>
+  
                    <SecondaryButton>
                      Старые фото
                    </SecondaryButton>

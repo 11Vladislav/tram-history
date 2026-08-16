@@ -50,8 +50,8 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const ItemIng = styled.img`
-  width: 350px;
- height: auto; 
+  width: 250px;
+ height: 200px; 
   object-fit: cover;
 margin-top: 20px;
 `;

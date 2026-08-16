@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "number": "1",
+    "title": "Михайловская Борщаговка — ул. Старовокзальная",
+    "status": "Действующий",
+    "description": "Первый трамвайный маршрут Киева, открытый 1 (13) июня 1892 года. Соединял Подол с Лыбедью и стал началом развития трамвайного сообщения в столице. Киевский трамвайный маршрут №1 имеет уникальную историю. За более чем 130 лет своего существования он прошел полную трансформацию: от первого в Восточной Европе электрического трамвая в центре города до современной скоростной линии, соединяющей Борщаговку с Центральным железнодорожным вокзалом.",
+
+    "stats": {
+      "opened": "1 (13) июня 1892",
+      "length": "11,8 км",
+      "stops": "16",
+      "interval": "7–10 мин"
+    },
+
+    "periods": [
+      {
+        "id": "1892-1934",
+        "label": "1892–1934",
+        "title": "1892–1934",
+        "description": "Первоначальный период существования маршрута.",
+        "map": "images/routes/route-1/map1892-1934.png",
+        "photos": [
+          "images/routes/route-1/photo-1.png",
+          "images/routes/route-1/photo-2.jpg",
+          "images/routes/route-1/photo-3.png",
+          "images/routes/route-1/photo-4.png"
+        ]
+      },
+
+      {
+        "id": "1934-1948",
+        "label": "1934–1948",
+        "title": "1934–1948",
+        "description": "Изменение маршрута в период войн и масштабного развития городской трамвайной сети.",
+        "map": "images/routes/route-1/map1934-1948.jpg",
+        "photos": [
+          "images/routes/route-1/photo-1.jpg",
+          "images/routes/route-1/photo-2.jpg"
+        ]
+      },
+
+      {
+        "id": "1948-1959",
+        "label": "1948–1959",
+        "title": "1948–1959",
+        "description": "Послевоенное восстановление и развитие трамвайной сети Киева.",
+        "map": "images/routes/route-1/map1948-1959.jpg",
+        "photos": [
+          "images/routes/route-1/photo-2.jpg",
+          "images/routes/route-1/photo-3.png"
+        ]
+      },
+
+      {
+        "id": "1963-1970",
+        "label": "1963–1970",
+        "title": "1963–1970",
+        "description": "Маршрут в период развития трамвайной сети независимой Украины.",
+        "map": "images/routes/route-1/map1963-1970.jpg",
+        "photos": [
+          "images/routes/route-1/photo-5.jpg",
+          "images/routes/route-1/photo-6.jpg"
+        ]
+      },
+
+      {
+        "id": "2014-current",
+        "label": "2014–наши дни",
+        "title": "2014–наши дни",
+        "description": "Современное состояние маршрута.",
+        "map": "images/routes/route-1/map-current.jpg",
+        "photos": [
+          "images/routes/route-1/photo-1.jpg",
+          "images/routes/route-1/photo-4.jpg"
+        ]
+      }
+    ]
+  }
+]
