@@ -29,10 +29,7 @@ const Hero = () => {
                    
                      <StyledNavLink to="/history"><PrimaryButton>Обзор истории</PrimaryButton></StyledNavLink>
                      <StyledNavLink to="/routes"><SecondaryButton>Все маршруты</SecondaryButton></StyledNavLink>
-  
-                   <SecondaryButton>
-                     Старые фото
-                   </SecondaryButton>
+                     <StyledNavLink to="/gallery"><SecondaryButton>Старые фото</SecondaryButton></StyledNavLink>
                  </ButtonsRow>
                </HeroContent>
              </HeroSection>

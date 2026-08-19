@@ -30,7 +30,7 @@ export const Breadcrumbs = styled.div`
 
 export const MainImg = styled.img`
   width: 100%;
-  height: 350px;
+  max-height: 750px;
 
   object-fit: cover;
 
@@ -93,7 +93,7 @@ max-width: 700px;
 
 export const TextImg = styled.img`
   width: 45%;
-  height: 350px;
+  max-height: 450px;
   object-fit: cover;
   border-radius: 6px;
   margin-top: 25px;

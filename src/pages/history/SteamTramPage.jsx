@@ -3,7 +3,8 @@ import {Section,
         MainImg1,
         Text,
         Breadcrumbs,
-        StyledLink
+        StyledLink,
+        
 
     } 
 from './TramPage.styled';

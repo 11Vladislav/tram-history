@@ -81,7 +81,7 @@ export const PrimaryButton = styled.button`
     transform: translateY(-2px);
   }
         @media (max-width: 768px) {
-    flex-grow: 1;
+   
   }
 `;
 
@@ -92,10 +92,10 @@ export const SecondaryButton = styled.button`
 
   background: rgba(255, 255, 255, 0.7);
   color: #3f2d24;
-
+  flex-grow: 1;
   font-size: 1rem;
   font-weight: 600;
-
+ width: 190px;
   cursor: pointer;
   transition: 0.3s ease;
 
@@ -104,7 +104,7 @@ export const SecondaryButton = styled.button`
     transform: translateY(-2px);
   }
         @media (max-width: 768px) {
-    flex-grow: 1;
+   
   }
 `;
 

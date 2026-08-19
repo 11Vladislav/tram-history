@@ -33,9 +33,9 @@
         "label": "1934–1948",
         "title": "1934–1948",
         "description": "Изменение маршрута в период войн и масштабного развития городской трамвайной сети.",
-        "map": "images/routes/route-1/map1934-1948.jpg",
+        "map": "images/routes/route-1/map1934-1948.png",
         "photos": [
-          "images/routes/route-1/photo-1.jpg",
+          "images/routes/route-1/photo-8.png",
           "images/routes/route-1/photo-2.jpg"
         ]
       },
@@ -45,9 +45,9 @@
         "label": "1948–1959",
         "title": "1948–1959",
         "description": "Послевоенное восстановление и развитие трамвайной сети Киева.",
-        "map": "images/routes/route-1/map1948-1959.jpg",
+        "map": "images/routes/route-1/map1948-1959.png",
         "photos": [
-          "images/routes/route-1/photo-2.jpg",
+          "images/routes/route-1/photo-7.jpg",
           "images/routes/route-1/photo-3.png"
         ]
       },
@@ -57,10 +57,10 @@
         "label": "1963–1970",
         "title": "1963–1970",
         "description": "Маршрут в период развития трамвайной сети независимой Украины.",
-        "map": "images/routes/route-1/map1963-1970.jpg",
+        "map": "images/routes/route-1/map1963-1970.png",
         "photos": [
-          "images/routes/route-1/photo-5.jpg",
-          "images/routes/route-1/photo-6.jpg"
+          "images/routes/route-1/photo-5.png",
+          "images/routes/route-1/photo-6.png"
         ]
       },
 

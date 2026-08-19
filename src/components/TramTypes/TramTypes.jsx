@@ -27,7 +27,7 @@ const TramTypes = () => {
                             </StyledLink>
                         </ListItem>
                           <ListItem>
-                            <StyledLink to="/history/gasoline">Бензотрамвай
+                            <StyledLink to="/history/petrol">Бензотрамвай
                             <ItemIng src={petrolTram} alt='Бензотрамвай'></ItemIng>
                             </StyledLink> 
                         </ListItem>
