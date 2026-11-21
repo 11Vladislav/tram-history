@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  background: #f5efe4;
+  background: var(--color-bg-section);
+  border-top: 1px solid var(--color-border);
   padding: 80px 40px;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
 `;
 
 export const Container = styled.div`
@@ -10,39 +15,44 @@ export const Container = styled.div`
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 420px 1fr;
+  /* minmax(0, 1fr) не даёт галерее распирать колонку */
+  grid-template-columns: 420px minmax(0, 1fr);
   gap: 50px;
 
   @media (max-width: 992px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
   }
 `;
 
 export const LeftColumn = styled.div``;
 
 export const RightColumn = styled.div`
-  background: #f8f2e7;
-
+  background: var(--color-bg-light);
   border: 1px solid #dfd1be;
   border-radius: 10px;
-
   padding: 24px;
+
+  @media (max-width: 768px) {
+    padding: 14px;
+  }
 `;
 
 export const Title = styled.h2`
   font-family: "Gosznak", serif;
   font-size: 2.5rem;
   color: #2f241c;
-
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Divider = styled.div`
   width: 60px;
   height: 3px;
-
-  background: #9d1f1f;
-
+  background: var(--color-red);
   margin-bottom: 30px;
 `;
 
@@ -53,24 +63,24 @@ export const Description = styled.p`
   margin-bottom: 40px;
 `;
 
-export const FeaturesList = styled.div`
+export const FeaturesList = styled.ul`
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 25px;
 `;
 
-export const FeatureItem = styled.div`
+export const FeatureItem = styled.li`
   display: flex;
   align-items: center;
   gap: 18px;
 `;
 
 export const IconCircle = styled.div`
+  flex-shrink: 0;
   width: 54px;
   height: 54px;
-
   border-radius: 50%;
-
   background: #e8dccb;
 
   display: flex;
@@ -83,6 +93,5 @@ export const IconCircle = styled.div`
 
 export const FeatureText = styled.div`
   font-size: 1.05rem;
-  color: #3f2d24;
+  color: var(--color-text);
 `;
-

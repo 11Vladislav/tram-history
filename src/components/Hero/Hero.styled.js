@@ -1,46 +1,45 @@
 import styled from "styled-components";
-import heroBackground from '../../assets/bg-1.png';
-import {NavLink} from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
+import heroBackground from "../../assets/bg-1.png";
 
 export const HeroSection = styled.section`
   width: 100%;
   min-height: 600px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  
+  padding: 100px 0;
 
-  background: 
-    url(${heroBackground});
-
+  background: url(${heroBackground});
   background-size: cover;
-  background-position: cover;
+  background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
-  
-`;
+  align-items: center;
 
-export const HeroImage = styled.img`
-  width: 100%;
-  height: auto; 
-  object-fit: cover;
+  @media (max-width: 768px) {
+    min-height: 0;
+    padding: 60px 0;
+  }
 `;
 
 export const HeroContent = styled.div`
+  width: 100%;
   max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 
-padding: 0 40px;
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
-export const HeroTitle = styled.h2`
+export const HeroTitle = styled.h1`
   font-size: 40px;
-  color: #3f2d24;
+  color: var(--color-text);
   margin-bottom: 20px;
   line-height: 1.1;
 
   span {
-    color: #9d1f1f;
+    color: var(--color-red);
   }
 
   @media (max-width: 768px) {
@@ -54,62 +53,44 @@ export const HeroText = styled.p`
   line-height: 1.7;
   color: #5c5046;
   margin-bottom: 35px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ButtonsRow = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+  }
 `;
 
-export const PrimaryButton = styled.button`
+/* Одна ссылка-кнопка вместо <a><button/></a> — валидный HTML и нормальная доступность */
+export const ButtonLink = styled(NavLink)`
+  display: inline-block;
+  min-width: 190px;
   padding: 15px 35px;
-  border: none;
   border-radius: 8px;
 
-  background: #9d1f1f;
-  color: white;
-
+  text-align: center;
   font-size: 1rem;
   font-weight: 600;
 
-  cursor: pointer;
-  transition: 0.3s ease;
+  background: ${({ $primary }) =>
+    $primary ? "var(--color-red)" : "rgba(255, 255, 255, 0.7)"};
+  color: ${({ $primary }) => ($primary ? "#fff" : "var(--color-text)")};
+  border: 1px solid ${({ $primary }) => ($primary ? "transparent" : "#bca894")};
+
+  transition: background 0.3s ease, transform 0.3s ease;
 
   &:hover {
-    background: #7e1818;
+    background: ${({ $primary }) =>
+      $primary ? "var(--color-red-dark)" : "#fff"};
     transform: translateY(-2px);
   }
-        @media (max-width: 768px) {
-   
-  }
-`;
-
-export const SecondaryButton = styled.button`
-  padding: 15px 35px;
-  border-radius: 8px;
-  border: 1px solid #bca894;
-
-  background: rgba(255, 255, 255, 0.7);
-  color: #3f2d24;
-  flex-grow: 1;
-  font-size: 1rem;
-  font-weight: 600;
- width: 190px;
-  cursor: pointer;
-  transition: 0.3s ease;
-
-  &:hover {
-    background: white;
-    transform: translateY(-2px);
-  }
-        @media (max-width: 768px) {
-   
-  }
-`;
-
-
-export const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  color: inherit;
 `;

@@ -1,57 +1,64 @@
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 export const Section = styled.section`
-    background: #f5efe5;
-  padding: 10px 40px 50px 70px;
-  
+  background: var(--color-bg-section);
+  border-top: 1px solid var(--color-border);
+  padding: 50px 40px;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
 `;
 
 export const Title = styled.h2`
   text-align: center;
-
   font-family: "Gosznak", serif;
   font-size: 3rem;
-  font-weight: 700;
-  color: #3f2d24;
+  color: var(--color-text);
+  margin-bottom: 50px;
 
-  margin-bottom: 70px;
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
 `;
 
 export const List = styled.ul`
-    list-style-type: none;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    flex-wrap: wrap;
-    @ media (max-width: 768px) {
-      justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+
+  @media (max-width: 768px) {
+    gap: 30px;
   }
 `;
 
-export const ListItem = styled.li`
-    margin-top: 20px;
-    font-size 20px;
-`;
-
-export const StyledLink = styled(NavLink)`
+export const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
-     text-decoration: none;
-     font-weight: 400;
-     font-size: 25px;
-     color: #3f2d24;
-     &:hover {
-    color: #9d1f1f;
-  }
+  align-items: center;
 
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-red);
+  }
 `;
 
-export const ItemIng = styled.img`
+export const ItemImg = styled.img`
   width: 250px;
- height: 200px; 
+  max-width: 100%;
+  height: 200px;
   object-fit: cover;
-margin-top: 20px;
+  margin-top: 20px;
 `;

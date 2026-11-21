@@ -1,89 +1,95 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import {
   HeaderWrapper,
   TopBar,
   LogoBlock,
+  LogoLink,
   TramImage,
   SiteTitle,
   MainTitle,
   Subtitle,
   Navigation,
   StyledLink,
-   BurgerLine,
-   BurgerButton
-} from './Header.styled';
+  BurgerLine,
+  BurgerButton,
+} from "./Header.styled";
 
-import tramLogo from '../../assets/tram-logo.png';
+import tramLogo from "../../assets/tram-logo.png";
 
+const NAV_ITEMS = [
+  { to: "/history", label: "История" },
+  { to: "/routes", label: "Маршруты" },
+  { to: "/rolling-stock", label: "Подвижной состав" },
+  { to: "/archive", label: "Архив фото" },
+];
 
 const Header = () => {
+  const { pathname } = useLocation();
 
-   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Храним страницу, на которой открыли меню. Когда страница меняется,
+  // openedAt !== pathname и меню закрывается само, без useEffect + setState.
+  const [openedAt, setOpenedAt] = useState(null);
+  const isMenuOpen = openedAt === pathname;
+
+  // Закрытие по Escape: setState вызывается в обработчике события, это допустимо
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setOpenedAt(null);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => setOpenedAt(isMenuOpen ? null : pathname);
 
   return (
-    <>
-      <HeaderWrapper>
-        <TopBar>
-          <LogoBlock>
-            <StyledLink to="/"
-            onClick={() => setIsMenuOpen(false)}>
-                <TramImage
-                  src={tramLogo}
-                  alt="Киевский трамвай"
-                />
-            </StyledLink>
-            <SiteTitle>
-              <MainTitle>
-                Киевские Трамвайные Маршруты: <span>История</span>
-              </MainTitle>
+    <HeaderWrapper>
+      <TopBar>
+        <LogoBlock>
+          <LogoLink to="/" aria-label="На главную">
+            <TramImage src={tramLogo} alt="Киевский трамвай" />
+          </LogoLink>
 
-              <Subtitle>
-                История, маршруты и подвижной состав киевского трамвая
-              </Subtitle>
-            </SiteTitle>
-          </LogoBlock>
+          <SiteTitle>
+            <MainTitle>
+              Киевские Трамвайные Маршруты: <span>История</span>
+            </MainTitle>
+            <Subtitle>
+              История, маршруты и подвижной состав киевского трамвая
+            </Subtitle>
+          </SiteTitle>
+        </LogoBlock>
 
-           <BurgerButton
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        <BurgerButton
+          type="button"
+          aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
+          aria-expanded={isMenuOpen}
+          aria-controls="main-navigation"
+          onClick={toggleMenu}
         >
           <BurgerLine />
           <BurgerLine />
           <BurgerLine />
         </BurgerButton>
 
-        <Navigation $isOpen={isMenuOpen}>
-          <StyledLink
-            to="/history"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            История
-          </StyledLink>
-
-          <StyledLink
-            to="/routes"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Маршруты
-          </StyledLink>
-
-          <StyledLink
-            to="/rolling-stock"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Подвижной состав
-          </StyledLink>
-
-          <StyledLink
-            to="/archive"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Архив фото
-          </StyledLink>
+        <Navigation
+          id="main-navigation"
+          aria-label="Основная навигация"
+          $isOpen={isMenuOpen}
+        >
+          {NAV_ITEMS.map(({ to, label }) => (
+            <StyledLink key={to} to={to}>
+              {label}
+            </StyledLink>
+          ))}
         </Navigation>
-        </TopBar>
-      </HeaderWrapper>
-    </>
+      </TopBar>
+    </HeaderWrapper>
   );
 };
 

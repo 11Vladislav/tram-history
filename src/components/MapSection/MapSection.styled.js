@@ -14,13 +14,13 @@ export const MapImage = styled.img`
   width: 100%;
   display: block;
   object-fit: cover;
+  height: auto;
 `;
 
 export const InfoGrid = styled.div`
   max-width: 1400px;
-  margin-top: 35px;
-  margin-left: 35px;
-
+  margin: 35px auto 0;
+  width: calc(100% - 70px);
 
   background: #f7f1e7;
   border: 1px solid #d8cab7;
@@ -72,7 +72,7 @@ export const CardImage = styled.img`
 `;
 
 export const CardTitle = styled.h3`
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.35rem;
   color: #3f2d24;
   margin-bottom: 10px;

@@ -1,7 +1,6 @@
 import {
   Section,
   Title,
-  TimelineLine,
   TimelineGrid,
   TimelineItem,
   Dot,
@@ -17,19 +16,19 @@ import expansionTram from "../../assets/expansion-tram.png";
 import warTram from "../../assets/war-tram.png";
 import modernTram from "../../assets/modern-tram.png";
 
+// Перед публикацией проверь даты и формулировки по источникам
 const timelineData = [
   {
     year: "1891",
     title: "Первые трамваи",
     description:
-      "30 июля (11 августа) 1891 года года в Киеве открылось первое трамвайное движение. Это была линия конного трамвая.",
+      "30 июля (11 августа) 1891 года в Киеве открылось первое трамвайное движение. Это была линия конного трамвая.",
     image: horseTram,
   },
   {
     year: "1896",
     title: "Электрификация",
-    description:
-      "Все линии трамвая стали электрическими.",
+    description: "Все линии трамвая стали электрическими.",
     image: electricTram,
   },
   {
@@ -43,14 +42,14 @@ const timelineData = [
     year: "1941–1945",
     title: "Военные годы",
     description:
-      "Трамвай продолжал  работать в суровые военные годы, обеспечивать жизнь города.",
+      "Трамвай продолжал работать в суровые военные годы, обеспечивая жизнь города.",
     image: warTram,
   },
   {
-    year: "1950–наши дни",
+    year: "1950 – наши дни",
     title: "Современный этап",
     description:
-      "Обновление подвижного состава и инфраструктуры. Внедрение современных технологий",
+      "Обновление подвижного состава и инфраструктуры. Внедрение современных технологий.",
     image: modernTram,
   },
 ];
@@ -60,25 +59,14 @@ const Timeline = () => {
     <Section>
       <Title>Ключевые этапы</Title>
 
-      <TimelineLine />
-
       <TimelineGrid>
         {timelineData.map((item) => (
           <TimelineItem key={item.year}>
-            <Dot />
-
+            <Dot aria-hidden="true" />
             <Year>{item.year}</Year>
-
             <PeriodTitle>{item.title}</PeriodTitle>
-
-            <Description>
-              {item.description}
-            </Description>
-
-            <TramImage
-              src={item.image}
-              alt={item.title}
-            />
+            <Description>{item.description}</Description>
+            <TramImage src={item.image} alt={item.title} />
           </TimelineItem>
         ))}
       </TimelineGrid>

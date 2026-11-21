@@ -22,7 +22,7 @@ export const Section = styled.section`
   border-top: 2px solid #c8b39a;
   border-bottom: 2px dashed #d9c5ad;
 
-  padding: 45px 60px;
+  padding: 25px 50px;
 
   display: flex;
   justify-content: space-between;
@@ -34,6 +34,7 @@ export const Section = styled.section`
     flex-direction: column;
     gap: 40px;
     text-align: center;
+    justify-content: center;
   }
 `;
 
@@ -114,7 +115,7 @@ export const PhotosWrapper = styled.div`
   position: relative;
   width: 320px;
   height: 220px;
-  margin-right: 60px;
+  
 `;
 
 

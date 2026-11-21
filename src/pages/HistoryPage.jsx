@@ -1,8 +1,7 @@
-import HistoryHero from '../components/HistoryHero/HistoryHero';
-import Timeline from '../components/TimeLine/TimeLine';
-import TramTypes from '../components/TramTypes/TramTypes';
-import TramAndCity from '../components/TramAndCity/TramAndCity';
-
+import HistoryHero from "../components/HistoryHero/HistoryHero";
+import Timeline from "../components/Timeline/Timeline";
+import TramTypes from "../components/TramTypes/TramTypes";
+import TramAndCity from "../components/TramAndCity/TramAndCity";
 
 const HistoryPage = () => {
   return (
@@ -10,10 +9,9 @@ const HistoryPage = () => {
       <HistoryHero />
       <Timeline />
       <TramTypes />
-      <TramAndCity/>
-
-    </> 
-    );
-}
+      <TramAndCity />
+    </>
+  );
+};
 
 export default HistoryPage;

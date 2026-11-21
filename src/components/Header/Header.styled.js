@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
-
+import { NavLink, Link } from "react-router-dom";
 
 export const HeaderWrapper = styled.header`
   width: 100%;
-  background: #f4eee3;
-  border-bottom: 1px solid #d7c8b4;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 `;
 
@@ -17,10 +16,10 @@ export const TopBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 
   @media (max-width: 768px) {
-    gap: 20px;
-    padding: 18px 20px;
+    padding: 14px 20px;
   }
 `;
 
@@ -28,6 +27,17 @@ export const LogoBlock = styled.div`
   display: flex;
   align-items: center;
   gap: 18px;
+  min-width: 0;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+`;
+
+/* Логотип — обычная ссылка, без подчёркивания и hover-эффекта меню */
+export const LogoLink = styled(Link)`
+  display: flex;
+  flex-shrink: 0;
 `;
 
 export const TramImage = styled.img`
@@ -36,88 +46,95 @@ export const TramImage = styled.img`
   object-fit: contain;
 
   @media (max-width: 768px) {
-    width: 70px;
+    width: 60px;
   }
 `;
 
 export const SiteTitle = styled.div`
   display: flex;
   flex-direction: column;
-    @media (max-width: 768px) {
-    display: none;
-  }
+  min-width: 0;
 `;
 
-export const MainTitle = styled.h1`
-  font-size: 2rem;
-  color: #3f2d24;
-  font-weight: 700;
-  margin: 0;
+export const MainTitle = styled.p`
+  font-family: "Gosznak", serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   font-size: 26px;
+  line-height: 1.2;
+  color: var(--color-text);
+
   span {
     color: #a71d2c;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     font-size: 20px;
-    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
   }
 `;
 
 export const Subtitle = styled.p`
   margin-top: 6px;
-  color: #746457;
+  color: var(--color-text-muted);
   font-size: 18px;
+
+  @media (max-width: 992px) {
+    font-size: 14px;
+  }
+
+  /* На телефоне оставляем только заголовок */
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Navigation = styled.nav`
   display: flex;
   gap: 35px;
 
+  @media (max-width: 992px) {
+    gap: 22px;
+  }
+
   @media (max-width: 768px) {
     position: absolute;
-
     top: 100%;
     left: 0;
-
     width: 100%;
-
-    background: #f4eee3;
-
-    border-top: 1px solid #d7c8b4;
+    z-index: 1000;
 
     flex-direction: column;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 
-    padding: ${({ $isOpen }) =>
-      $isOpen ? "20px" : "0"};
-
-    gap: ${({ $isOpen }) =>
-      $isOpen ? "20px" : "0"};
-
-    max-height: ${({ $isOpen }) =>
-      $isOpen ? "300px" : "0"};
-
+    padding: ${({ $isOpen }) => ($isOpen ? "20px" : "0 20px")};
+    gap: ${({ $isOpen }) => ($isOpen ? "20px" : "0")};
+    max-height: ${({ $isOpen }) => ($isOpen ? "320px" : "0")};
     overflow: hidden;
 
-    transition: all 0.3s ease;
+    /* Скрытые ссылки не должны получать фокус по Tab */
+    visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-
-    z-index: 1000;
+    transition: max-height 0.3s ease, padding 0.3s ease, gap 0.3s ease,
+      visibility 0.3s;
   }
 `;
 
 export const StyledLink = styled(NavLink)`
-
   position: relative;
-  text-decoration: none;
-  color: #3f2d24;
+  color: var(--color-text);
   font-weight: 600;
   font-size: 1rem;
-  transition: 0.3s ease;
+  transition: color 0.3s ease;
 
-  &:hover {
-    color: #9d1f1f;
+  &:hover,
+  &.active {
+    color: var(--color-red);
   }
 
   &::after {
@@ -127,21 +144,23 @@ export const StyledLink = styled(NavLink)`
     bottom: -6px;
     width: 0%;
     height: 2px;
-    background: #9d1f1f;
-    transition: 0.3s ease;
+    background: var(--color-red);
+    transition: width 0.3s ease;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &.active::after {
     width: 100%;
   }
 `;
 
 export const BurgerButton = styled.button`
   display: none;
+  flex-shrink: 0;
+  padding: 8px;
 
   background: transparent;
   border: none;
-
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -154,7 +173,6 @@ export const BurgerButton = styled.button`
 export const BurgerLine = styled.span`
   width: 28px;
   height: 3px;
-
-  background: #9d1f1f;
+  background: var(--color-red);
   border-radius: 2px;
 `;
