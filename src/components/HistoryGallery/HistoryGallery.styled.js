@@ -1,58 +1,57 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const GalleryHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  gap: 16px;
   margin-bottom: 20px;
 `;
 
 export const GalleryTitle = styled.h3`
   margin: 0;
-
-  font-size: 2rem;
-  color: #3f2d24;
-
   font-family: "Gosznak", serif;
-`;
+  font-size: 2rem;
+  color: var(--color-text);
 
-export const ViewAllButton = styled.button`
-  background: transparent;
-  border: none;
-
-  color: #9d1f1f;
-
-  font-size: 1rem;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-
-  &:hover {
-    color: #7d1818;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
   }
 `;
 
-export const MainImageWrapper = styled.div`
+export const ViewAllLink = styled(Link)`
+  flex-shrink: 0;
+  color: var(--color-red);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--color-red-dark);
+  }
+`;
+
+export const MainImageButton = styled.button`
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
   overflow: hidden;
   border-radius: 10px;
+  cursor: zoom-in;
 `;
 
 export const MainImage = styled.img`
+  display: block;
   width: 100%;
   height: 420px;
-
   object-fit: cover;
-
-  cursor: pointer;
-
   filter: sepia(60%);
+  transition: transform 0.4s;
 
-  transition: 0.4s;
-
-  &:hover {
+  ${MainImageButton}:hover & {
     transform: scale(1.02);
   }
 
@@ -61,43 +60,41 @@ export const MainImage = styled.img`
   }
 `;
 
-export const ThumbnailRow = styled.div`
-  margin-top: 16px;
-
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-
-  gap: 10px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+export const Caption = styled.p`
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #6a5d52;
 `;
 
-export const Thumbnail = styled.img`
-  width: 100%;
-  height: 90px;
+export const ThumbnailRow = styled.div`
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+`;
 
-  object-fit: cover;
-
-  border-radius: 6px;
-
+export const ThumbnailButton = styled.button`
+  padding: 0;
+  background: transparent;
   cursor: pointer;
-
-  filter: sepia(60%);
+  border-radius: 6px;
+  overflow: hidden;
 
   border: ${({ $active }) =>
-    $active
-      ? "3px solid #9d1f1f"
-      : "2px solid transparent"};
+    $active ? "3px solid var(--color-red)" : "2px solid transparent"};
 
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
   }
+`;
 
-  @media (max-width: 768px) {
-    height: 150px;
-  }
+export const Thumbnail = styled.img`
+  display: block;
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  filter: sepia(60%);
 `;

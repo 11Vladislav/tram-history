@@ -8,7 +8,7 @@ function App() {
     <>
       <ScrollToTop />
       <Header />
-       <main>
+      <main>
         <AppRoutes />
       </main>
       <Footer />

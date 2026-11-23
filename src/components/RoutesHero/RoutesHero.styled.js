@@ -1,48 +1,27 @@
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-export const RoutesSection = styled.section`
-     background-color: #fff8d1;
-
+/* Фон приведён к общей палитре сайта (раньше был жёлтый #fff8d1) */
+export const Hero = styled.section`
+  background-color: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-border);
 `;
 
 export const RoutesContainer = styled.div`
-    max-width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
-
   padding: 80px 40px;
-  display: flex;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 80px;
   align-items: center;
-  justify-content: space-between;  
-  @media (max-width: 768px) {
-   flex-direction: column;
+
+  @media (max-width: 992px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    padding: 50px 20px;
   }
-`;
-
-
-export const RoutesTitle = styled.h3`
-  font-family: "Gosznak", sans-serif;
-
-  font-size: 3.2rem;
-  line-height: 1.1;
-
-  color: #3f2d24;
-
-  margin-bottom: 30px;
-
-  @media (max-width: 768px) {
-    font-size: 2.3rem;
-  }
-`;
-
-export const RoutesText = styled.p`
-  max-width: 550px;
-
-  color: #4f443b;
-
-  font-size: 1.2rem;
-  line-height: 1.9;
 `;
 
 export const LeftSide = styled.div`
@@ -55,50 +34,70 @@ export const RightSide = styled.div`
   justify-content: center;
 `;
 
-export const Breadcrumbs = styled.div`
+export const Breadcrumbs = styled.nav`
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 35px;
-   span {
+
+  [aria-current="page"] {
     color: #a71d2c;
-} 
+  }
 `;
 
-export const RoutesImage = styled.img`
-  width: 100%;
-  max-width: 650px;
-
-  display: block;
-  border-radius: 5%;
-  box-shadow: 10px 5px 5px #fff8d1;
-  filter: sepia(45%);
-`;
-
-export const StyledLink = styled(NavLink)`
-
+export const Crumb = styled(Link)`
   position: relative;
-  text-decoration: none;
-  color: #3f2d24;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: 0.3s ease;
+  color: var(--color-text);
+  transition: color 0.3s ease;
 
   &:hover {
-    color: #9d1f1f;
+    color: var(--color-red);
   }
 
   &::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -4px;
     width: 0%;
     height: 2px;
-    background: #9d1f1f;
-    transition: 0.3s ease;
+    background: var(--color-red);
+    transition: width 0.3s ease;
   }
 
   &:hover::after {
     width: 100%;
   }
+`;
+
+export const RoutesTitle = styled.h1`
+  font-family: "Gosznak", serif;
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 2.3rem;
+  }
+`;
+
+export const RoutesText = styled.p`
+  max-width: 550px;
+  color: #4f443b;
+  font-size: 1.2rem;
+  line-height: 1.9;
+
+  @media (max-width: 768px) {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+`;
+
+export const RoutesImage = styled.img`
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 5%;
+  box-shadow: 0 10px 25px rgba(60, 40, 20, 0.2);
+  filter: sepia(45%);
 `;

@@ -26,7 +26,7 @@ const Hero = () => {
             Обзор истории
           </ButtonLink>
           <ButtonLink to="/routes">Все маршруты</ButtonLink>
-          <ButtonLink to="/gallery">Старые фото</ButtonLink>
+          <ButtonLink to="/archive">Старые фото</ButtonLink>
         </ButtonsRow>
       </HeroContent>
     </HeroSection>

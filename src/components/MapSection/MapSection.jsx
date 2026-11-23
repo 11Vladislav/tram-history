@@ -33,11 +33,13 @@ const cards = [
     title: "Подвижной состав",
     text: "Модели трамваев разных лет. Технические данные.",
     image: trainCarsImage,
+    path: "/rolling-stock",
   },
   {
     title: "Воспоминания",
     text: "Истории киевлян о жизни и поездках на трамвае.",
     image: memoryBookImage,
+    path: "/memories",
   },
 ];
 

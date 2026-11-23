@@ -1,8 +1,9 @@
 import { useState } from "react";
-import routes from "../../data/routes.json";
 import Lightbox from "yet-another-react-lightbox";
-
 import "yet-another-react-lightbox/styles.css";
+import { FaCalendarAlt, FaRoute, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+
+import routes from "../../data/routes.json";
 
 import {
   Section,
@@ -17,7 +18,6 @@ import {
   RouteName,
   RouteYears,
   Arrow,
-
   Content,
   RouteHeader,
   HeaderLeft,
@@ -26,378 +26,213 @@ import {
   RouteTitle,
   RouteYearsMain,
   Status,
-
   Description,
-
   Stats,
   StatItem,
   StatIcon,
   StatContent,
   StatLabel,
   StatValue,
-
   MapWrapper,
   MapImage,
-
   Periods,
   PeriodItem,
   PeriodDot,
   PeriodLine,
   PeriodLabel,
-
   Gallery,
   GalleryHeader,
   GalleryTitle,
   GalleryLink,
   GalleryGrid,
-  GalleryImage
+  GalleryImage,
 } from "./RoutesSection.styled";
 
-import {
-  FaCalendarAlt,
-  FaRoute,
-  FaMapMarkerAlt,
-  FaClock
-} from "react-icons/fa";
+const VISIBLE_COUNT = 8;
+const DEFAULT_YEARS = "1892 – наши дни";
+
+const STATS = [
+  { key: "opened", label: "Открыт", Icon: FaCalendarAlt },
+  { key: "length", label: "Длина маршрута", Icon: FaRoute },
+  { key: "stops", label: "Остановок", Icon: FaMapMarkerAlt },
+  { key: "interval", label: "Интервал движения", Icon: FaClock },
+];
+
+// Пути из routes.json лежат в public/, поэтому учитываем base из vite.config.js
+const assetPath = (path) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 const RoutesSection = () => {
-
   const [selectedRoute, setSelectedRoute] = useState(routes[0]);
+  const [selectedPeriod, setSelectedPeriod] = useState(routes[0].periods[0]);
+  const [showAll, setShowAll] = useState(false);
 
-  const [selectedPeriod, setSelectedPeriod] = useState(
-    routes[0].periods[0]
-  );
+  // Один лайтбокс на всю секцию: { slides, index } или null, когда закрыт
+  const [lightbox, setLightbox] = useState(null);
 
-const [lightboxOpen, setLightboxOpen] = useState(false);
-
-const [lightboxIndex, setLightboxIndex] = useState(0);
-const [mapLightboxOpen, setMapLightboxOpen] = useState(false);
+  const visibleRoutes = showAll ? routes : routes.slice(0, VISIBLE_COUNT);
 
   const handleRouteChange = (route) => {
     setSelectedRoute(route);
-
     setSelectedPeriod(route.periods[0]);
   };
 
+  const routeYears = (route) => route.years ?? DEFAULT_YEARS;
 
-  const handlePeriodChange = (period) => {
-    setSelectedPeriod(period);
-  };
+  const photoSlides = selectedPeriod.photos.map((photo) => ({
+    src: assetPath(photo),
+    alt: `Историческая фотография маршрута №${selectedRoute.number}`,
+  }));
 
-
-const getAssetPath = (path) => {
-  return `${import.meta.env.BASE_URL}${path}`;
-};
-
-
-
-const galleryImages = selectedPeriod.photos.map((photo) => ({
-  src: getAssetPath(photo),
-}));
+  const mapSlides = [
+    {
+      src: assetPath(selectedPeriod.map),
+      alt: `Карта маршрута №${selectedRoute.number}`,
+    },
+  ];
 
   return (
     <Section>
-
       <Container>
-
-        {/* Левая колонка */}
-
         <Sidebar>
-
-          <SidebarTitle>
-            Все маршруты
-          </SidebarTitle>
-
+          <SidebarTitle>Все маршруты</SidebarTitle>
 
           <RouteList>
+            {visibleRoutes.map((route) => {
+              const active = selectedRoute.id === route.id;
 
-            {routes.map((route) => (
+              return (
+                <RouteItem
+                  key={route.id}
+                  type="button"
+                  $active={active}
+                  aria-current={active ? "true" : undefined}
+                  onClick={() => handleRouteChange(route)}
+                >
+                  <RouteNumber>{route.number}</RouteNumber>
 
-              <RouteItem
-                key={route.id}
-                $active={selectedRoute.id === route.id}
-                onClick={() => handleRouteChange(route)}
-              >
+                  <RouteInfo>
+                    <RouteName>{route.title}</RouteName>
+                    <RouteYears>{routeYears(route)}</RouteYears>
+                  </RouteInfo>
 
-                <RouteNumber>
-                  {route.number}
-                </RouteNumber>
-                <RouteInfo>
-
-                  <RouteName>
-                    {route.title}
-                  </RouteName>
-
-                  <RouteYears>
-                    1892 – наши дни
-                  </RouteYears>
-
-                </RouteInfo>
-
-
-                <Arrow>
-                  ›
-                </Arrow>
-
-              </RouteItem>
-
-            ))}
-
+                  <Arrow aria-hidden="true">›</Arrow>
+                </RouteItem>
+              );
+            })}
           </RouteList>
 
-          <SidebarButton>
-            Показать все маршруты
-          </SidebarButton>
-
+          {routes.length > VISIBLE_COUNT && (
+            <SidebarButton type="button" onClick={() => setShowAll(!showAll)}>
+              {showAll ? "Свернуть список" : "Показать все маршруты"}
+            </SidebarButton>
+          )}
         </Sidebar>
 
-
-        {/* Правая колонка */}
-
         <Content>
-
           <RouteHeader>
-
             <HeaderLeft>
-
-              <BigRouteNumber>
-                {selectedRoute.number}
-              </BigRouteNumber>
-
+              <BigRouteNumber>{selectedRoute.number}</BigRouteNumber>
 
               <RouteTitleBlock>
-
-                <RouteTitle>
-                  {selectedRoute.title}
-                </RouteTitle>
-
-                <RouteYearsMain>
-                  1892 – наши дни
-                </RouteYearsMain>
-
+                <RouteTitle>{selectedRoute.title}</RouteTitle>
+                <RouteYearsMain>{routeYears(selectedRoute)}</RouteYearsMain>
               </RouteTitleBlock>
-
             </HeaderLeft>
 
-
-            <Status>
-              {selectedRoute.status}
-            </Status>
-
+            {selectedRoute.status && <Status>{selectedRoute.status}</Status>}
           </RouteHeader>
 
-
-          <Description>
-            {selectedRoute.description}
-          </Description>
-
-
-          {/* Статистика */}
+          <Description>{selectedRoute.description}</Description>
 
           <Stats>
-
-            <StatItem>
-
-              <StatIcon>
-                <FaCalendarAlt />
-              </StatIcon>
-
-              <StatContent>
-
-                <StatLabel>
-                  Открыт
-                </StatLabel>
-
-                <StatValue>
-                  {selectedRoute.stats.opened}
-                </StatValue>
-
-              </StatContent>
-
-            </StatItem>
-
-
-            <StatItem>
-
-              <StatIcon>
-                <FaRoute />
-              </StatIcon>
-
-              <StatContent>
-
-                <StatLabel>
-                  Длина маршрута
-                </StatLabel>
-
-                <StatValue>
-                  {selectedRoute.stats.length}
-                </StatValue>
-
-              </StatContent>
-
-            </StatItem>
-
-
-            <StatItem>
-
-              <StatIcon>
-                <FaMapMarkerAlt />
-              </StatIcon>
-
-              <StatContent>
-
-                <StatLabel>
-                  Остановок
-                </StatLabel>
-
-                <StatValue>
-                  {selectedRoute.stats.stops}
-                </StatValue>
-
-              </StatContent>
-
-            </StatItem>
-
-
-            <StatItem>
-
-              <StatIcon>
-                <FaClock />
-              </StatIcon>
-
-              <StatContent>
-
-                <StatLabel>
-                  Интервал движения
-                </StatLabel>
-
-                <StatValue>
-                  {selectedRoute.stats.interval}
-                </StatValue>
-
-              </StatContent>
-
-            </StatItem>
-
-          </Stats>
-
-
-          {/* Карта */}
-
-          <MapWrapper>
-
-            <MapImage
-              src={getAssetPath(selectedPeriod.map)}
-              alt={`Карта маршрута №${selectedRoute.number}`}
-              onClick={() => setMapLightboxOpen(true)}
-            />
-
-          </MapWrapper>
-
-
-          {/* Историческая шкала */}
-
-          <Periods>
-
-            {selectedRoute.periods.map(
-              (period, index) => (
-
-                <PeriodItem
-                  key={period.id}
-                  $active={
-                    selectedPeriod.id === period.id
-                  }
-                  onClick={() =>
-                    handlePeriodChange(period)
-                  }
-                >
-
-                  <PeriodDot
-                     $active={selectedPeriod.id === period.id}
-                  />
-
-                  {index <
-                    selectedRoute.periods.length - 1 && (
-                    <PeriodLine />
-                  )}
-
-                  <PeriodLabel>
-                    {period.label}
-                  </PeriodLabel>
-
-                </PeriodItem>
-
+            {STATS.filter(({ key }) => selectedRoute.stats?.[key]).map(
+              ({ key, label, Icon }) => (
+                <StatItem key={key}>
+                  <StatIcon aria-hidden="true">
+                    <Icon />
+                  </StatIcon>
+                  <StatContent>
+                    <StatLabel>{label}</StatLabel>
+                    <StatValue>{selectedRoute.stats[key]}</StatValue>
+                  </StatContent>
+                </StatItem>
               )
             )}
+          </Stats>
 
+          <MapWrapper
+            type="button"
+            aria-label="Увеличить карту маршрута"
+            onClick={() => setLightbox({ slides: mapSlides, index: 0 })}
+          >
+            <MapImage
+              src={assetPath(selectedPeriod.map)}
+              alt={`Карта маршрута №${selectedRoute.number}`}
+            />
+          </MapWrapper>
+
+          <Periods>
+            {selectedRoute.periods.map((period, index) => {
+              const active = selectedPeriod.id === period.id;
+
+              return (
+                <PeriodItem
+                  key={period.id}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setSelectedPeriod(period)}
+                >
+                  <PeriodDot $active={active} />
+                  {index < selectedRoute.periods.length - 1 && <PeriodLine />}
+                  <PeriodLabel $active={active}>{period.label}</PeriodLabel>
+                </PeriodItem>
+              );
+            })}
           </Periods>
 
+          {selectedPeriod.photos.length > 0 && (
+            <Gallery>
+              <GalleryHeader>
+                <GalleryTitle>Исторические фотографии маршрута</GalleryTitle>
 
-          {/* Галерея */}
+                <GalleryLink
+                  type="button"
+                  onClick={() => setLightbox({ slides: photoSlides, index: 0 })}
+                >
+                  Смотреть все
+                </GalleryLink>
+              </GalleryHeader>
 
-          <Gallery>
-
-            <GalleryHeader>
-
-              <GalleryTitle>
-                Исторические фотографии маршрута
-              </GalleryTitle>
-
-              <GalleryLink>
-                Смотреть все
-              </GalleryLink>
-
-            </GalleryHeader>
-
-
-            <GalleryGrid>
-
-              {selectedPeriod.photos.map(
-                (photo, index) => (
-
-            <GalleryImage
-                key={index}
-                src={getAssetPath(photo)}
-                alt={`Историческая фотография маршрута №${selectedRoute.number}`}
-                onClick={() => {
-                  setLightboxIndex(index);
-                  setLightboxOpen(true);
-                }}
-              />
-
-                  )
-                )}
-
-            </GalleryGrid>
-
-          </Gallery>
-
+              <GalleryGrid>
+                {selectedPeriod.photos.map((photo, index) => (
+                  <GalleryImage
+                    key={photo}
+                    type="button"
+                    aria-label={`Открыть фото ${index + 1}`}
+                    onClick={() => setLightbox({ slides: photoSlides, index })}
+                  >
+                    <img
+                      src={assetPath(photo)}
+                      alt={`Историческая фотография маршрута №${selectedRoute.number}`}
+                      loading="lazy"
+                    />
+                  </GalleryImage>
+                ))}
+              </GalleryGrid>
+            </Gallery>
+          )}
         </Content>
-
       </Container>
 
-        <Lightbox
-          open={lightboxOpen}
-          close={() => setLightboxOpen(false)}
-          slides={galleryImages}
-          index={lightboxIndex}
-          on={{
-            view: ({ index }) => setLightboxIndex(index),
-          }}
-        />
-        <Lightbox
-          open={mapLightboxOpen}
-          close={() => setMapLightboxOpen(false)}
-          slides={[
-            {
-              src: getAssetPath(selectedPeriod.map),
-            },
-          ]}
-          />
-
+      <Lightbox
+        open={lightbox !== null}
+        close={() => setLightbox(null)}
+        slides={lightbox?.slides ?? []}
+        index={lightbox?.index ?? 0}
+      />
     </Section>
   );
 };
-
 
 export default RoutesSection;
