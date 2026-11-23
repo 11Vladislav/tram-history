@@ -1,0 +1,1 @@
+var e=`11vladponomarev@ukr.net`;export{e as t};

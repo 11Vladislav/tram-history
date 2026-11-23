@@ -1,0 +1,1 @@
+var e=`/tram-history/assets/petrol-tram-BEQq_8f5.jpg`;export{e as t};

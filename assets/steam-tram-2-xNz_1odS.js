@@ -1,0 +1,1 @@
+var e=`/tram-history/assets/konka1-DNDS8Xh_.jpg`,t=`/tram-history/assets/steam-tram-2-Cg9ss0IQ.jpg`;export{e as n,t};

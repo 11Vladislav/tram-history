@@ -1,0 +1,1 @@
+var e=`/tram-history/assets/mtv-82-DeTOs9I-.webp`,t=`/tram-history/assets/ktv-55-DUgZP1DU.webp`,n=`/tram-history/assets/tatra-t3-tram-ByDuMq7n.jpg`,r=`/tram-history/assets/electron-tram-By9AF_LS.jpg`;export{e as i,n,t as r,r as t};
