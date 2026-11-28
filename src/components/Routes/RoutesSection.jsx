@@ -46,6 +46,8 @@ import {
   GalleryLink,
   GalleryGrid,
   GalleryImage,
+  Events,
+  EventDate,
 } from "./RoutesSection.styled";
 
 const VISIBLE_COUNT = 8;
@@ -143,7 +145,18 @@ const RoutesSection = () => {
             {selectedRoute.status && <Status>{selectedRoute.status}</Status>}
           </RouteHeader>
 
-          <Description>{selectedRoute.description}</Description>
+          {selectedRoute.intro && <Description>{selectedRoute.intro}</Description>}
+
+            {selectedRoute.events && (
+              <Events>
+                {selectedRoute.events.map(({ date, text }) => (
+                  <li key={date}>
+                    <EventDate>{date}</EventDate>
+                    {text}
+                  </li>
+                ))}
+              </Events>
+            )}
 
           <Stats>
             {STATS.filter(({ key }) => selectedRoute.stats?.[key]).map(

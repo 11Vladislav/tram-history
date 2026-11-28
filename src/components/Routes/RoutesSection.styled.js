@@ -436,3 +436,25 @@ export const GalleryImage = styled.button`
     filter: sepia(0%);
   }
 `;
+
+export const Events = styled.ul`
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin: 0 0 25px;
+  max-width: 850px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4c4036;
+
+  li {
+    padding-left: 16px;
+    border-left: 3px solid #d8c4ac;
+  }
+`;
+
+export const EventDate = styled.strong`
+  display: block;
+  color: var(--color-red);
+  font-weight: 600;
+`;
