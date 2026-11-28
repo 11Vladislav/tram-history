@@ -1,4 +1,4 @@
-import{n as e,r as t,t as n}from"./index-BW8qr3B5.js";var r=e.section`
+import{n as e,r as t,t as n}from"./index-BbKL2FjS.js";var r=e.section`
   background: var(--color-bg-section);
   padding: 40px 40px 70px;
 

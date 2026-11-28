@@ -1,4 +1,4 @@
-import{a as e,n as t,o as n,r,t as i}from"./index-BW8qr3B5.js";import{t as a}from"./styles-chnh1c0G.js";import{t as o}from"./photos-BopdsMg5.js";import{n as ee,t as te}from"./steam-tram-2-xNz_1odS.js";import{t as ne}from"./petrol-tram-DLf5AzSD.js";import{i as s,r as c,s as l}from"./fa-CISSvroK.js";var u=t.section`
+import{a as e,n as t,o as n,r,t as i}from"./index-BbKL2FjS.js";import{t as a}from"./styles-C_tpvDwJ.js";import{t as o}from"./photos-BopdsMg5.js";import{n as ee,t as te}from"./steam-tram-2-xNz_1odS.js";import{t as ne}from"./petrol-tram-DLf5AzSD.js";import{i as s,r as c,s as l}from"./fa-CB4d1cMY.js";var u=t.section`
   background: url(${`/tram-history/assets/oldpaper-texture-DHFZfLSK.png`}) center / cover no-repeat;
   overflow: hidden;
 `,d=t.div`
